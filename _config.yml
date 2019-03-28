@@ -14,7 +14,7 @@ email: mephalascoven@ceroflux.com
 description: >- # this means to ignore newlines until "baseurl:"
   Looking for an active social guild? Want to get the most out of ESO? Mephala's Coven is here for you! Inclusive atmosphere, many weekly events, helpful officers and every aspect of the game covered: PvE, PvP, crafting, builds, addons, and more. Say bye bye to the dungeon finder, and step into the friendliest community!
 baseurl: ""
-url: "https://www.mephalascoven.com/"
+url: "https://www.mephalascoven.com"
 twitter_username: jekyllrb
 github_username:  jekyll
 excerpt_separator: <!--content-->

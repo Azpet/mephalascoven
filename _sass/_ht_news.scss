@@ -1,0 +1,29 @@
+.news {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    .slide,.carousel-inner,.carousel-item,.carousel-slide,.image_wrapper,.carousel .container img {
+        height: 500px;
+    }
+
+    .mbr-slider .carousel-control.carousel-control-prev {
+        margin-left: 1rem;
+    }
+    
+    .mbr-slider .carousel-control.carousel-control-next {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .news .mbr-slider .carousel-control {
+        top: auto;
+        bottom: 1rem;
+    }
+}
+
+.filler {
+    background-image: url(../../../assets/images/MephalasCovenFiller.jpg);
+    padding-top: 110px;
+    padding-bottom: 110px;
+}

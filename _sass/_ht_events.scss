@@ -1,0 +1,79 @@
+$upcoming-color: #327198;
+$upcoming-hover-color: #224d68;
+$passed-color: #969696;
+$passed-hover-color: #585858;
+
+.event-timeline .timeline-text-content {
+    border-radius: 7px;
+}
+
+.event-timeline .iconsBackground::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 57px;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent $upcoming-color;
+}
+
+.event-timeline .reverse .iconsBackground::after {
+    left: 57px;
+    border-color: transparent $upcoming-color transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .event-timeline:not(.reverse) .iconsBackground::after {
+        left: 52px;
+    }
+    .event-timeline .iconsBackground::after {
+        left: 52px;
+        border-color: transparent $upcoming-color transparent transparent;
+    }
+    .event-timeline .iconsBackground.passed-event::after {
+        left: 52px;
+        border-color: transparent $passed-color transparent transparent!important;
+    }
+}
+
+.event-timeline .iconsBackground.without-after-element::after {
+    border-color: transparent transparent transparent transparent!important;
+}
+
+.event-timeline .iconsBackground:hover {
+    cursor: pointer;
+    background-color: $upcoming-hover-color;
+}
+
+.iconsBackground.passed-event {
+    background-color: $passed-color;
+}
+
+.iconsBackground.passed-event:hover {
+    background-color: $passed-hover-color;
+}
+
+.event-timeline .timeline-text-content.passed-event {
+    background-color: $passed-color;
+}
+
+.event-timeline .reverse .iconsBackground.passed-event::after {
+    border-color: transparent $passed-color transparent transparent;
+}
+
+.event-timeline .iconsBackground.passed-event::after {
+    border-color: transparent transparent transparent $passed-color;
+}
+
+.event-timeline .iconsBackground.without-after-element.passed-event::after {
+    border-color: transparent transparent transparent transparent;
+}
+
+.iconsBackground img {
+    margin-top: 15px;
+}
+
+.iconsBackground {
+    z-index: 10;
+}

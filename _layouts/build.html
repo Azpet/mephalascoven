@@ -1,0 +1,245 @@
+---
+layout: default
+---
+
+<section class="header mbr-parallax-background">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"></h1>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Builds</h3>
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+                    Angel's Mighty Frighty Builds!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% for post in site.posts %}
+	{% if post.category == "build" and page.subcategory == post.subcategory %}
+		<section class="build">
+			<div class="container">
+				<h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">{{ post.header }}</h2>
+				<img src="{{ site.baseurl }}/assets/images/builds/{{ post.subcategory }}/{{ post.images[0].url }}" alt="{{ post.images[0].alt }}" title="{{ post.images[0].title }}" style="width:100%">
+
+				<div class="container">
+					
+					{{ post.intro }}
+					
+					<p class="mbr-fonts-style display-5 align-center" style="padding-top: 0px; padding-bottom: 0px;">2 out of:</p>
+					<div class="container align-center start-sets">
+						<div class="row media-row">
+							{% for set in post.startsets %}
+								{% if set.type != "Monster Set" %}
+									<div id="set_{{ set.name }}" class="set-tooltip col-lg-3 col-md-6">
+										<div class="set-tooltip-center"><a class="eso-set" href="https://www.eso-sets.com/set/{{ set.name | remove: "'" | slugify }}" title="Mephala's Coven Set item {{ set.name }}" target="_blank"><h4 class="set-tooltip-setname">{{ set.name }}</h4></a>
+											<strong>LEVEL 50 - CP 160</strong>
+											<div class="set-tooltip-seperator"></div>
+											<div><span>Type</span> <strong>{{ set.type }}</strong>
+											</div>
+											<div class="set-tooltip-seperator"></div>
+											<span><strong>Set bonus</strong><br>
+												{{ set.bonus }}
+											</span>
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+					
+					<p class="mbr-fonts-style display-5 align-center" style="padding-top: 0px; padding-bottom: 0px;">1 out of:</p>
+					<div class="container align-center start-sets">
+						<div class="row media-row">
+							{% for set in post.startsets %}
+								{% if set.type == "Monster Set" %}
+									<div id="set_{{ set.name }}" class="set-tooltip col-lg-3 col-md-6">
+										<div class="set-tooltip-center"><a class="eso-set" href="https://www.eso-sets.com/set/{{ set.name | remove: "'" | slugify }}" title="Mephala's Coven Set item {{ set.name }}" target="_blank"><h4 class="set-tooltip-setname">{{ set.name }}</h4></a>
+											<strong>LEVEL 50 - CP 160</strong>
+											<div class="set-tooltip-seperator"></div>
+											<div><span>Type</span> <strong>{{ set.type }}</strong>
+											</div>
+											<div class="set-tooltip-seperator"></div>
+											<span><strong>Set bonus</strong><br>
+												{{ set.bonus }}
+											</span>
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+
+					{{ post.guide }}
+
+					<img src="{{ site.baseurl }}/assets/images/builds/{{ post.subcategory }}/{{ post.images[1].url }}" alt="{{ post.images[1].alt }}" title="{{ post.images[1].title }}" style="width:100%">
+					<div class="container championpoints mt-3">
+						<h2 class="mbr-fonts-style display-5">600 CP</h2>
+						<div class="row">
+							{% for color in post.cphigh %}
+								<div class="col">
+									<p class="mbr-fonts-style display-5">{{ color.first[0] | upcase }}</p>
+									{% for sign in color.first[1] %}
+										<strong>THE {{ sign.first[0] | upcase }}</strong><br>
+										{% for stat in sign.first[1] %}
+											{{ stat.name }} {{ stat.points }}<br>
+										{% endfor %}
+									{% endfor %}{% if forloop.last == false %}<br>{% endif %}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+
+					<div class="container championpoints mb-3">
+						<h2 class="mbr-fonts-style display-5">300 CP</h2>
+						<div class="row">
+							{% for color in post.cplow %}
+								<div class="col">
+									<p class="mbr-fonts-style display-5">{{ color.first[0] | upcase }}</p>
+									{% for sign in color.first[1] %}
+										<strong>THE {{ sign.first[0] | upcase }}</strong><br>
+										{% for stat in sign.first[1] %}
+											{{ stat.name }} {{ stat.points }}<br>
+										{% endfor %}
+									{% endfor %}{% if forloop.last == false %}<br>{% endif %}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+
+					<img src="{{ site.baseurl }}/assets/images/builds/{{ post.subcategory }}/{{ post.images[2].url }}" alt="{{ post.images[2].alt }}" title="{{ post.images[2].title }}" style="width:100%">
+					<div class="container random">
+						{{ post.extra }}
+					</div>
+
+					<div class="container passives">
+						<p class="mbr-fonts-style display-5">Passives</p>
+
+						<ul>
+							{% for passive in post.passives %}
+								<li>{{ passive.passive }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="container skills">
+						<p class="mbr-fonts-style display-5">Skills and Morphs</p>
+						
+						<div class="container align-center">
+							<div class="row media-row">
+								{% for skill in post.frontbar %}
+									<div class="tooltip-base tooltop-up">
+										<a class="eso-set" href="https://eso-skillbook.com/skill/{{ skill.skill | remove: "'" | slugify }}" target="_blank" title="Mephala's Coven Skill {{ skill.skill }}"><img class="skill-img skill-img-small {% if forloop.last %}ultimate{% endif %}" src="https://beast.pathfindermediagroup.com/storage/skills/{{ skill.url }}.png"></a>
+
+										<div class="set-tooltip tooltip-content {% if forloop.last %}ultimate{% endif %}">
+											<div class="set-tooltip-center">
+												<img class="skill-img" src="https://beast.pathfindermediagroup.com/storage/skills/{{ skill.url }}.png">
+												<a class="eso-set" href="https://eso-skillbook.com/skill/{{ skill.skill | remove: "'" | slugify }}" target="_blank" title="Mephala's Coven Skill {{ skill.skill }}"><h4 class="set-tooltip-setname">{{ skill.skill }}</h4></a>
+												<div class="set-tooltip-seperator"></div>
+												<div>
+													{% if skill.casttime != nil %}
+														<strong>Cast Time</strong>: {{ skill.casttime }}<br>
+													{% endif %}
+													{% if skill.target != nil %}
+														<strong>Target</strong>: {{ skill.target }}<br>
+													{% endif %}
+													{% if skill.range != nil %}
+														<strong>Range</strong>: {{ skill.range }}<br>
+													{% endif %}
+													{% if skill.cost != nil %}
+														<strong>Cost</strong>: {{ skill.cost }}<br>
+													{% endif %}
+												</div>
+												<div class="set-tooltip-seperator"></div>
+												<span>
+													<strong>Skill description</strong><br>
+													{{ skill.description }}
+												</span>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						
+						<div class="container align-center">
+							<div class="row media-row">
+								{% for skill in post.backbar %}
+									<div class="tooltip-base tooltop-down">
+										<a class="eso-set" href="https://eso-skillbook.com/skill/{{ skill.skill | remove: "'" | slugify }}" target="_blank" title="Mephala's Coven Skill {{ skill.skill }}"><img class="skill-img skill-img-small {% if forloop.last %}ultimate{% endif %}" src="https://beast.pathfindermediagroup.com/storage/skills/{{ skill.url }}.png"></a>
+
+										<div class="set-tooltip tooltip-content {% if forloop.last %}ultimate{% endif %}">
+											<div class="set-tooltip-center">
+												<img class="skill-img" src="https://beast.pathfindermediagroup.com/storage/skills/{{ skill.url }}.png">
+												<a class="eso-set" href="https://eso-skillbook.com/skill/{{ skill.skill | remove: "'" | slugify }}" target="_blank" title="Mephala's Coven Skill {{ skill.skill }}"><h4 class="set-tooltip-setname">{{ skill.skill }}</h4></a>
+												<div class="set-tooltip-seperator"></div>
+												<div>
+													{% if skill.casttime != nil %}
+														<strong>Cast Time</strong>: {{ skill.casttime }}<br>
+													{% endif %}
+													{% if skill.target != nil %}
+														<strong>Target</strong>: {{ skill.target }}<br>
+													{% endif %}
+													{% if skill.range != nil %}
+														<strong>Range</strong>: {{ skill.range }}<br>
+													{% endif %}
+													{% if skill.cost != nil %}
+														<strong>Cost</strong>: {{ skill.cost }}<br>
+													{% endif %}
+												</div>
+												<div class="set-tooltip-seperator"></div>
+												<span>
+													<strong>Skill description</strong><br>
+													{{ skill.description }}
+												</span>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+
+						<ul>
+							{% for skill in post.skills %}
+								<li><a href="https://eso-skillbook.com/skill/{{ skill.skill | split: "> " | first | slugify}}" title="Mephala's Coven Skill {{ skill.skill }}">{{ skill.skill | split: "> " | first }}</a>> <a href="https://eso-skillbook.com/skill/{{ skill.skill | split: "> " | last | split: "(" | first | slugify}}" title="Mephala's Coven Skill {{ skill.skill }}">{{ skill.skill | split: "> " | last }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+					
+					<img src="{{ site.baseurl }}/assets/images/builds/{{ post.subcategory }}/{{ post.images[3].url }}" alt="{{ post.images[3].alt }}" title="{{ post.images[3].title }}" style="width:100%">
+					<div class="container passives">
+						<br><p class="mbr-fonts-style display-5">Perfect Setup (Experienced)</p>
+						
+						<ul>
+							{% for set in post.perfect %}
+								<li>{{ set.set }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					
+					<div class="container align-center end-sets">
+						<div class="row media-row">
+							{% for set in post.endsets %}
+								<div id="set_{{ set.name }}" class="set-tooltip col-lg-3 col-md-6">
+									<div class="set-tooltip-center"><a class="eso-set" href="https://www.eso-sets.com/set/{{ set.name | remove: "'" | slugify }}" target="_blank" title="Mephala's Coven Set item {{ set.name }}"><h4 class="set-tooltip-setname">{{ set.name }}</h4></a>
+										<strong>LEVEL 50 - CP 160</strong>
+										<div class="set-tooltip-seperator"></div>
+										<div><span>Type</span> <strong>{{ set.type }}</strong>
+										</div>
+										<div class="set-tooltip-seperator"></div>
+										<span><strong>Set bonus</strong><br>
+											{{ set.bonus }}
+										</span>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+{% endfor %}

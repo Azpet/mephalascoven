@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<section class="header mbr-parallax-background">
+	<div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"></h1>
+				<h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Gallery</h3>
+				
+                <div class="mbr-section-btn align-center">
+					{% for post in site.posts %}
+						{% if post.category == "gallery"%}
+							<a class="btn btn-md {% if page.subcategory == post.subcategory %}btn-secondary{% else %}btn-white-outline{% endif %} display-4" href="{{ site.baseurl }}/gallery/{{ post.subcategory }}/#gallery_{{ post.subcategory }}" title="Mephala's Coven Gallery {{ post.subcategory }}">
+								<span class="mbri-{{ post.icon }} mbr-iconfont mbr-iconfont-btn"></span>
+								{{ post.subcategory | upcase }}
+							</a>
+						{% endif %}
+					{% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sub-gallery" id="gallery_{{ page.subcategory }}">
+    <div class="container align-center">
+        <div class="row media-row gallery-row">
+            {% for post in site.posts %}
+                {% if post.category == "gallery" and page.subcategory == post.subcategory %}
+                    {% for image in post.images %}
+                        <div class="gallery-grid-item hover-zoom gallery-col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <img src="{{ site.baseurl }}/assets/images/gallery/{{ post.subcategory }}/{{ image.url }}" alt="{{ image.alt }}" title="{{ image.title }}">
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{{ content }}
+<script src="{{ site.baseurl }}/assets/js/gallery.js"></script>

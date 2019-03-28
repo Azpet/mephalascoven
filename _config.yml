@@ -1,0 +1,23 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Mephala's Coven
+email: mephalascoven@ceroflux.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Looking for an active social guild? Want to get the most out of ESO? Mephala's Coven is here for you! Inclusive atmosphere, many weekly events, helpful officers and every aspect of the game covered: PvE, PvP, crafting, builds, addons, and more. Say bye bye to the dungeon finder, and step into the friendliest community!
+baseurl: ""
+url: "https://www.mephalascoven.com/"
+twitter_username: jekyllrb
+github_username:  jekyll
+excerpt_separator: <!--content-->
+
+# Build settings
+markdown: kramdown

@@ -7,6 +7,6 @@ discord: Daardendrian#8257
 # Featured image
 images:
   - url: MephalasCoven-Daardendrian.jpg
-    alt: Character Portrait
-    title: Daardendrian Character
+    alt: Daardendrian
+    title: Daardendrian
 ---

@@ -7,6 +7,6 @@ discord: Kelentari#8032
 # Featured image
 images:
   - url: MephalasCoven-Kelentari.jpg
-    alt: Character Portrait
-    title: Kelentari Character
+    alt: Kelentari
+    title: Kelentari
 ---

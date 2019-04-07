@@ -11,6 +11,6 @@ link:
 
 cover:
   url: MephalasCovenSimpleTanking.jpg
-  alt: Mephala's Coven Simple Tanking Image
-  title: Mephala's Coven Simple Tanking Image
+  alt: Mephala's Coven Simple Tanking
+  title: Mephala's Coven Simple Tanking
 ---

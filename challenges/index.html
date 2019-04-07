@@ -12,9 +12,29 @@ id: challenges
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"></h1>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Challenges</h3>
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
-                    Participate in awesome custom challenges and more!
+                    Custom challenges made by and for the community!
                 </p>
             </div>
         </div>
     </div>
+</section>
+
+<section class="ht__event">
+        <div class="container align-center">
+            <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">Mephala’s Fury Leaderboard</h2>
+            <p class="ht__event__paragraph">Try to complete normal Cloudrest with the least amount of team members! For verification you have to send a screenshot of the boss drop item to @Arch-Angell. This screenshot should clearly contain the names with whom the item can be traded. Lasts until midnight Sunday April 14th. Good luck!</p>
+            <div class="ht__event__table">
+                {% for post in site.posts reversed %}
+                    {% if post.category == "furyboard" %}
+                        <div class="row">
+                            {% for member in post.team %}
+                                <div class="col col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                                    {{ member }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 </section>

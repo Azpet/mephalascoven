@@ -7,6 +7,6 @@ discord: Arch Angel#5403
 # Featured image
 images:
   - url: MephalasCoven-ArchAngel.jpg
-    alt: Character Portrait
-    title: Arch Angel Character
+    alt: Arch Angel
+    title: Arch Angel
 ---

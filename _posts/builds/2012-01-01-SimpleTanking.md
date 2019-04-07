@@ -6,8 +6,8 @@ header: Arch Angel's Simple Tanking Guide
 
 cover:
   url: MephalasCovenTankingCover.jpg
-  alt: Mephala's Coven Tanking Cover Image
-  title: Mephala's Coven Tanking Cover Image
+  alt: Mephala's Coven Tanking Cover
+  title: Mephala's Coven Tanking Cover
 
 overview:
   - title: Easy to learn
@@ -179,17 +179,17 @@ skills:
 # Featured images
 images:
   - url: MephalasCovenTanking1.jpg
-    alt: Mephala's Coven Tanking Header Image
-    title: Mephala's Coven Tanking Header Image
+    alt: Mephala's Coven Tanking Header
+    title: Mephala's Coven Tanking Header
   - url: MephalasCovenTanking2.jpg
-    alt: Mephala's Coven Tanking CP Image
-    title: Mephala's Coven Tanking CP Image
+    alt: Mephala's Coven Tanking CP
+    title: Mephala's Coven Tanking CP
   - url: MephalasCovenTanking3.jpg
-    alt: Mephala's Coven Tanking OP Image
-    title: Mephala's Coven Tanking OP Image
+    alt: Mephala's Coven Tanking OP
+    title: Mephala's Coven Tanking OP
   - url: MephalasCovenTanking4.jpg
-    alt: Mephala's Coven Tanking Perfect Image
-    title: Mephala's Coven Tanking Perfect Image
+    alt: Mephala's Coven Tanking Perfect
+    title: Mephala's Coven Tanking Perfect
 
 # Featured starting sets
 startsets:

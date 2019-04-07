@@ -49,13 +49,23 @@ id: events
                                 <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">{{ post.name }}</h4>
                                 <p class="mbr-timeline-text mbr-fonts-style display-7">
                                     <em>{{ post.leader }}</em><br>
+                                    {% if post.when != nil %}
                                     <strong>When:</strong> {{ post.when }}<br>
+                                    {% endif %}
+                                    {% if post.requirements != nil %}
                                     <strong>Where:</strong> {{ post.where }}<br>
+                                    {% endif %}
                                     {% if post.requirements != nil %}
                                         <strong>Requirements:</strong> {{ post.requirements }}<br>
                                     {% endif %}
                                     {% if post.description != nil %}
                                         <strong>Description:</strong> {{ post.description }}
+                                    {% endif %}
+                                    {% if post.link != nil %}
+                                        <br>
+                                        <a class="btn btn-md btn-white-outline display-4 event-btn" href="{{ site.baseurl }}/{{ post.link.href }}/" title="{{ post.link.title }}">
+                                            {{ post.link.text }}
+                                        </a>
                                     {% endif %}
                                 </p>
                             </div>

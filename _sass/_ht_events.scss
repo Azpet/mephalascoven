@@ -1,8 +1,3 @@
-$upcoming-color: #327198;
-$upcoming-hover-color: #224d68;
-$passed-color: #969696;
-$passed-hover-color: #585858;
-
 .event-timeline .timeline-text-content {
     border-radius: 7px;
 }
@@ -71,9 +66,16 @@ $passed-hover-color: #585858;
 }
 
 .iconsBackground img {
-    margin-top: 15px;
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
 }
 
 .iconsBackground {
     z-index: 10;
+}
+
+.event-btn {
+    width: 100%;
+    word-break: initial;
 }

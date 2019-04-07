@@ -1,101 +1,336 @@
-.guide {
-    padding: 50px;
-    position: relative;
-    &__sup{
-        display: inline-block;
-        cursor: pointer;
-        width: 200px;
-        height: auto;
+// .guide {
+//     padding: 50px;
+//     position: relative;
+//     &__sup{
+//         display: inline-block;
+//         cursor: pointer;
+//         width: 200px;
+//         height: auto;
         
-        box-sizing: border-box;
-        border: 4px solid $primary-color;
-        padding: 2px;
+//         box-sizing: border-box;
+//         border: 4px solid $primary-color;
+//         padding: 2px;
 
-        margin: 0 5px 20px 5px;
-        & p {
-            font-size: 200%;
-            text-transform: uppercase;
-            font-weight: 400px;
-            margin: 0;
-            text-align: center;
-            color: $primary-color;
-            transition: .1s;
-        }
-        &:hover{
-            background-color: $primary-color;
-            color: #fff;
-        }
-        &:hover > p{
-            background-color: $primary-color;
-            color: #fff;
-        }
-        &--active {
-            background-color: $primary-color;
-            color: #fff;
-        }
-        &--active > p{
-            background-color: $primary-color;
-            color: #fff;
-        }
-    }
-    &__sub {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        width: 80%;
-        margin: 0 auto;
-        transition: .2s;
-        &--passive {
-            display: none;
-            margin-top: -100px;
+//         margin: 0 5px 20px 5px;
+//         & p {
+//             font-size: 200%;
+//             text-transform: uppercase;
+//             font-weight: 400px;
+//             margin: 0;
+//             text-align: center;
+//             color: $primary-color;
+//             transition: .1s;
+//         }
+//         &:hover{
+//             background-color: $primary-color;
+//             color: #fff;
+//         }
+//         &:hover > p{
+//             background-color: $primary-color;
+//             color: #fff;
+//         }
+//         &--active {
+//             background-color: $primary-color;
+//             color: #fff;
+//         }
+//         &--active > p{
+//             background-color: $primary-color;
+//             color: #fff;
+//         }
+//     }
+//     &__sub {
+//         flex-wrap: wrap;
+//         justify-content: space-evenly;
+//         width: 80%;
+//         margin: 0 auto;
+//         transition: .2s;
+//         &--passive {
+//             display: none;
+//             margin-top: -100px;
             
+//         }
+//         &--active {
+//             display: flex;
+//             margin-top: 0;
+//         }
+//         &__content {
+//             font-size: 140%;
+//             text-transform: uppercase;
+//             font-weight: 400px;
+//             text-align: center;
+//             width: 23%;
+//             min-width: 295px;
+//             color: $primary-color;
+//             transition: .1s;
+//             border: 3px solid $primary-color;
+//             padding: 2px;
+//             margin-bottom: 5px;
+//             &:hover {
+//                 background-color: $primary-color;
+//                 color: #fff;
+//             }
+//         }
+//     }
+//     &__row {
+//         width: 80%;
+//         height: auto;
+//         margin: 0 auto;
+//         min-height: 40px;
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-evenly;
+//     }
+//     &__button {
+//         width: 100px;
+//         height: 100px;
+//         background-color: red;
+//         display: block;
+//         z-index: 1000;
+//         color: black;
+//     }
+//     &__text_row {
+//         width: 75%;
+//         height: auto;
+//         margin: 30px auto 0 auto;
+//         min-height: 40px;
+//     }
+//     &__paragraph {
+//         font-family: 'Rubik', sans-serif;
+//         font-size: 120%;
+//     }
+// }
+
+.guide {
+    position: relative;
+    padding: 0 100px;
+    background-color: $primary-color;
+    @media (max-width: 1000px) {
+        padding: 0;
+    }
+    &__main-element {
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        @media (max-width: 1000px) {
+            height: 250px;
         }
-        &--active {
-            display: flex;
-            margin-top: 0;
-        }
-        &__content {
-            font-size: 140%;
-            text-transform: uppercase;
-            font-weight: 400px;
-            text-align: center;
-            width: 23%;
-            min-width: 295px;
-            color: $primary-color;
-            transition: .1s;
-            border: 3px solid $primary-color;
-            padding: 2px;
-            margin-bottom: 5px;
-            &:hover {
-                background-color: $primary-color;
-                color: #fff;
+        &--prim {
+            &__left {
+                background-position: center;
+                width: 50%;
+                height: 100%;
+                clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+                position: relative;
+                float: left;
+                @media (max-width: 1000px) {
+                    clip-path: none;
+                }
+            }
+            &__left-alt {
+                background-position: center;
+                width: 50%;
+                height: 100%;
+                clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+                position: relative;
+                float: left;
+                @media (max-width: 1000px) {
+                    clip-path: none;
+                }
+            }
+            &__right {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding: 30px;
             }
         }
+        &--sec {
+            &__left {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding: 30px;
+            }
+            &__right {
+                width: 50%;
+                height: 100%;
+                //clip-path: polygon(20% 0%, 100% 0, 100% 100%, 5% 100%);
+                clip-path: polygon(0% 0%, 100% 0, 100% 100%, 20% 100%);
+                position: relative;
+                float: left;
+                @media (max-width: 1000px) {
+                    clip-path: none;
+                }
+            }
+            &__right-alt {
+                width: 50%;
+                height: 100%;
+                clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+                position: relative;
+                float: left;
+                @media (max-width: 1000px) {
+                    clip-path: none;
+                }
+            }
+        }
+        &__button {
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            color: $secondary-color;
+            background: #fff;
+            position: absolute;
+            font-size: 150%;
+            font-weight: 500;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+            transition: transform 0.2s;
+
+            &--right{
+                top: 30px;
+                left: 100px;
+                @media (max-width: 1000px) {
+                    top: initial;
+                    bottom: 30px;
+                    left: 50px;
+                }
+                
+            }
+            &--left{
+                top: 30px;
+                right: 100px;
+                @media (max-width: 1000px) {
+                    top: initial;
+                    bottom: 30px;
+                    right: 50px;
+                }
+            }
+            &--right--alt{
+                bottom: 30px;
+                left: 100px;
+                @media (max-width: 1000px) {
+                    left: 50px;
+                }
+            }
+            &--left--alt{
+                bottom: 30px;
+                right: 100px;
+                @media (max-width: 1000px) {
+                    right: 50px;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-5%);
+            }
+        }
+        &--trial {
+            background-image: url(../images/guides/guides_hrc_header.jpg);
+            background-position: center;
+        }
+        &--dungeon {
+            background-image: url(../images/guides/guides_cos_header.jpg);
+            background-position: center;
+        }
+        &--mechanics {
+            background-image: url(../images/guides/guides_mec_header.jpg);
+            background-position: right;
+        }
+        &--world {
+            background-image: url(../images/guides/guides_wld_header.jpg);
+            background-position: bottom;
+        }
     }
-    &__row {
-        width: 80%;
-        height: auto;
-        margin: 0 auto;
-        min-height: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    &__button {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        display: block;
-        z-index: 1000;
-        color: black;
-    }
-    &__text_row {
-        width: 75%;
-        height: auto;
-        margin: 30px auto 0 auto;
-        min-height: 40px;
-    }
-    &__paragraph {
-        font-family: 'Rubik', sans-serif;
-        font-size: 120%;
+    &__typography {
+        &__main {
+            &__title {
+            font-family: 'Rubik', sans-serif;
+            display: inline-block;
+            position: absolute;
+            font-weight: 400;
+            width: auto;
+            color: $primary-color;
+            font-size: 400%;
+            white-space: nowrap;
+            @media (max-width: 1500px) {
+                font-size: 300%;
+            }
+            @media (max-width: 1200px) {
+                font-size: 250%;
+            }
+            &--left {
+                left: 140px;
+                top: 40px;
+                @media (max-width: 1500px) {
+                    left: 70px;
+                    top: 60px;
+                }
+                @media (max-width: 1000px) {
+                    left: 30px;
+                    top: 30px;
+                }
+            }
+            &--right {
+                right: 140px;
+                top: 40px;
+                @media (max-width: 1500px) {
+                    right: 70px;
+                    top: 60px;
+                }
+                @media (max-width: 1000px) {
+                    right: 30px;
+                    top: 30px;
+                }
+            }
+            }
+            &__para {
+                font-family: 'Rubik', sans-serif;
+                display: inline-block;
+                font-weight: 400;
+                font-size: 130%;
+                margin-top: 100px;
+                width: 750px;
+                position: absolute;
+                @media (max-width: 1750px) {
+                    width: 600px;
+                }
+                @media (max-width: 1500px) {
+                    font-size: 110%;
+                    width: 500px;
+                }
+                @media (max-width: 1200px) {
+                    width: 400px;
+                    margin-top: 80px;
+                }
+                @media (max-width: 1000px) {
+                    width: 350px;
+                    margin-top: 50px;
+                }
+                &--left {
+                    text-align: left;
+                    left: 110px;
+                    @media (max-width: 1500px) {
+                        left: 60px;
+                    }
+                    @media (max-width: 1000px) {
+                        left: 30px;
+                    }
+                }
+                &--right {
+                    text-align: right;
+                    right: 110px;
+                    @media (max-width: 1500px) {
+                        right: 60px;
+                    }
+                    @media (max-width: 1000px) {
+                        right: 30px;
+                    }
+                }
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@
     font-weight: 300;
     text-align: center;
     margin-bottom: 30px;
+    font-size: 48px;
     &--black {
         color: #000;
     }
@@ -14,4 +15,11 @@
     width: auto;
     border-bottom: 2px solid $primary-color;
     margin-bottom: 20px;
+}
+.heading-tertiary {
+    font-family: 'Rubik', sans-serif;
+    display: inline-block;
+    font-weight: 300;
+    width: auto;
+    color: #fff;
 }

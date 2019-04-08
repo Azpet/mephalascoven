@@ -27,6 +27,7 @@ id: challenges
                 {% for post in site.posts reversed %}
                     {% if post.category == "furyboard" %}
                         <div class="row">
+                            <div class="col col-12">{{ post.time }}</div>
                             <span>{{ forloop.index }}</span>
                             {% for member in post.team %}
                                 <div class="col col-lg-2 col-md-4 col-sm-6 col-xs-12">

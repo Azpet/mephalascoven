@@ -1,0 +1,40 @@
+.fury-leaderboard {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    
+    & .board {
+        margin: 0 auto;
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3);
+
+        & .row {
+            background-color: #d3dee4;
+            color: black;
+
+            & span {
+                margin: -24px -10px auto 10px;
+                font-size: larger;
+            }
+            &:nth-child(1) {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background-color: #224d68;
+                color: #fff;
+            }
+            &:nth-child(2) {
+                background-color: #327198;
+                color: #fff;
+            }
+            &:nth-child(3) {
+                background-color: #648aa2;
+                color: #fff;
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid white;
+            }
+            &:last-child {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+}

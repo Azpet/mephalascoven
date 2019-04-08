@@ -1,15 +1,10 @@
 ---
-# this ensures Jekyll reads the file to be transformed into CSS later
-# only Main files contain this front matter, not partials.
+# SASS precompiled file
 ---
 
-@import "ht_variables";
-@import "ht_guide";
-@import "ht_typography";
-@import "ht_elements";
-@import "ht_builds";
-@import "ht_team";
-@import "ht_events";
-@import "ht_news";
-@import "ht_gallery";
-@import "ht_ranking";
+@import "builds";
+@import "events";
+@import "gallery";
+@import "leaderboard";
+@import "news";
+@import "team";

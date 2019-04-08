@@ -23,7 +23,11 @@
         & .row {
             font-weight: 500;
             background-color: #e4e4e4;
-                color: #000;
+            color: #000;
+
+            & span {
+                margin: auto -10px auto 10px;
+            }
             &:nth-child(1) {
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;

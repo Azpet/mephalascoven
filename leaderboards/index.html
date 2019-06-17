@@ -10,25 +10,51 @@ id: challenges
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Challenges</h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Leaderboards</h3>
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
-                    Custom challenges made by and for the community!
+                    Leaderboards of custom challenges made by and for the community!
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="fury-leaderboard">
+<section class="pvp-leaderboard leaderboard">
+    <div class="container align-center">
+        <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">Mephala’s PVP Tournament</h2>
+        <p class="mbr-text align-center pb-3 mbr-fonts-style display-4">For the chance of winning 2000 crowns each, 3 teams will fight in the battlegrounds. Combining their strenght to prove that they are the best PVPers Mephala's Coven has to offer!</p>
+        <div class="board">
+            {% assign count = 0 %}
+            {% for post in site.posts reversed %}
+                {% if post.category == "pvptournament" %}
+                    {% assign count = count | plus:1 %}
+                    <div class="row">
+                        <div class="col col-12"><strong>{{ post.time }}</strong></div>
+                        <span><strong>{{ count }}</strong></span>
+                        {% for member in post.team %}
+                            <div class="col">
+                                {{ member }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="fury-leaderboard leaderboard">
     <div class="container align-center">
         <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">Mephala’s Fury Leaderboard</h2>
         <p class="mbr-text align-center pb-3 mbr-fonts-style display-4">Try to complete normal Cloudrest with the least amount of team members! For verification you have to send a screenshot of the boss drop item to @Arch Angel#5403 on Discord. This screenshot should clearly contain the names with whom the item can be traded. Lasts until midnight Sunday April 14th. Good luck!</p>
         <div class="board">
+            {% assign count = 0 %}
             {% for post in site.posts reversed %}
                 {% if post.category == "furyboard" %}
+                    {% assign count = count | plus:1 %}
                     <div class="row">
                         <div class="col col-12"><strong>{{ post.time }}</strong></div>
-                        <span><strong>{{ forloop.index }}</strong></span>
+                        <span><strong>{{ count }}</strong></span>
                         {% for member in post.team %}
                             <div class="col">
                                 {{ member }}

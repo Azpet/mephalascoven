@@ -30,7 +30,7 @@ id: challenges
                     {% assign count = count | plus:1 %}
                     <div class="row">
                         <div class="col col-12"><strong>{{ post.time }}</strong></div>
-                        <span><strong>{{ count }}</strong></span>
+                        <span><strong>{{ post.place }}</strong></span>
                         {% for member in post.team %}
                             <div class="col">
                                 {{ member }}

@@ -1,7 +1,7 @@
 ---
 category: team
 userid: Daardendrian
-role: Guild Officer, <br>PVE end Game
+role: Guild Officer
 discord: Daardendrian#8257
 
 # Featured image

@@ -39,7 +39,7 @@ id: gallery_overview
                     {% endfor %}
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    {% for post in site.posts %}
+                    {% for post in site.posts reversed %}
                         {% if post.category == "gallery" %}
                             <div class="carousel-item slider-fullscreen-image {% if forloop.first == true %}active{% endif %}" data-bg-video-slide="false" style="background-image: url({{ site.baseurl }}/assets/images/gallery/{{ post.subcategory }}/{{ post.images[0].url }});">
                                 <div class="container container-slide">

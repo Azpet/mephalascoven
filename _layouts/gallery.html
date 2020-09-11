@@ -29,9 +29,9 @@ layout: default
 <section class="sub-gallery" id="gallery_{{ page.subcategory }}">
     <div class="container align-center">
         <div class="row media-row gallery-row">
-            {% for post in site.posts reversed %}
+            {% for post in site.posts %}
                 {% if post.category == "gallery" and page.subcategory == post.subcategory %}
-                    {% for image in post.images %}
+                    {% for image in post.images reversed %}
                         <div class="gallery-grid-item hover-zoom gallery-col col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <img src="{{ site.baseurl }}/assets/images/gallery/{{ post.subcategory }}/{{ image.url }}" alt="{{ image.alt }}" title="{{ image.title }}">
                         </div>

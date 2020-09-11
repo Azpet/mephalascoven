@@ -19,7 +19,7 @@ $(document).ready(function() {
             else {
                 shrink(obj);
                 
-                setTimeout(function(){ $(obj).insertAfter($(obj).parent().children()[i]); }, 150);
+                //setTimeout(function(){ $(obj).insertAfter($(obj).parent().children()[i]); }, 150);
             }
         });
     });
@@ -30,7 +30,7 @@ $(document).ready(function() {
         $(window).resize(function() {
             shrink(obj);
             
-            setTimeout(function(){ $(obj).insertAfter($(obj).parent().children()[i]); }, 150);
+            //setTimeout(function(){ $(obj).insertAfter($(obj).parent().children()[i]); }, 150);
 
             if (window.matchMedia('(max-width: 575px)').matches
                 && $(obj).hasClass('hover-zoom')) {

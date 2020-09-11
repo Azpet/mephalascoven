@@ -29,7 +29,7 @@ layout: default
 <section class="sub-gallery" id="gallery_{{ page.subcategory }}">
     <div class="container align-center">
         <div class="row media-row gallery-row">
-            {% for post in site.posts %}
+            {% for post in site.posts reversed %}
                 {% if post.category == "gallery" and page.subcategory == post.subcategory %}
                     {% for image in post.images %}
                         <div class="gallery-grid-item hover-zoom gallery-col col-lg-3 col-md-4 col-sm-6 col-xs-12">

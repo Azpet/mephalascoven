@@ -1,7 +1,7 @@
 ---
 category: team
 userid: Daardendrian
-role: Guild Officer
+role: Dungeon Master
 discord: Daardendrian#8257
 
 # Featured image
